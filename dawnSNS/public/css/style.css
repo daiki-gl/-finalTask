@@ -1,0 +1,586 @@
+@charset "utf-8";
+html{
+box-sizing: border-box;
+overflow-x: hidden;
+}
+html.active {
+    overflow: hidden;
+}
+body{
+    color: #6C6C6C;
+}
+
+
+h2{
+    font-size: 28px;
+}
+
+a {
+    color: #6C6C6C;
+}
+
+button {
+    background: transparent;
+}
+
+textarea {
+    resize: vertical;
+}
+
+td {
+    font-size: 20px;
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 14px;
+}
+
+.btn {
+    background:#3C4767;
+    border-radius: 5px;
+    padding: 15px 5px;
+    max-width: 140px;
+    text-align: center;
+    display: block;
+    color: #fff;
+    transition: all .3s;
+}
+
+.btn:hover {
+    background-color: #E2563B;;
+}
+
+.prof-img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+
+.main-box {
+    border-bottom: 5px solid #D7D7D7;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+}
+
+input[type="text"],
+textarea{
+    border: none;
+}
+
+.prof-link {
+    display: block;
+    width: 100%;
+}
+
+/*******************
+    header
+********************/
+
+header{
+    background:#3C4767;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.name-box {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.pull-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 102px; /* ロゴサイズと同じ(ヘッダーの高さと同じ) */
+}
+
+.arrow {
+    position: relative;
+    width: 30px;
+    transition: all .3s;
+}
+
+.arrow.active {
+    transform: rotate(180deg);
+}
+
+.arrow-left,
+.arrow-right {
+    width: 10px;
+    height: 1px;
+    display: block;
+    background: #fff;
+    position: absolute;
+}
+
+.arrow-left {
+    top: 50%;
+    left: 7.5px;
+    transform: rotate(55deg);
+}
+.arrow-right {
+    top: 50%;
+    right: 7.5px;
+    transform: rotate(-55deg);
+}
+
+/* pulldown menu */
+.pulldown-container {
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
+
+.menu-box {
+    position: absolute;
+    width: 287px;
+    height: 277px;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.menu-box.active {
+    right: 0;
+    visibility: visible;
+}
+
+.menu-item {
+    height: 92px;
+    line-height: 46px;
+    font-size: 18px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    transition: all .3s;
+}
+
+.menu-item > a {
+    display: block;
+    padding: 20px 0;
+}
+
+.menu-item:hover {
+    background: #E2563B;
+}
+
+.menu-item:hover a {
+    color: #fff;
+}
+
+
+
+
+
+/********************
+     main content 
+*********************/
+#row{
+    display: flex;
+    flex-flow: row wrap;
+}
+#container{
+    flex: 0 0 80%;
+}
+
+
+/* side-bar */
+#side-bar{
+    flex: 1 0 19%;
+    border-left: 1px solid #6C6C6C;
+    height: auto;
+    min-height: 100vh;
+}
+
+.confirm{
+    padding: 15px;
+    border-bottom: 1px solid #6c6c6c;
+}
+
+.confirm p,
+.confirm .btn {
+    margin-top: 20px;
+}
+
+.confirm .btn {
+    margin-left: auto;
+}
+
+.follow-num-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-btn {
+    margin: 30px auto;
+}
+
+
+/********************
+     投稿フォーム
+*********************/
+.form-group {
+    display: flex;
+}
+
+.form-group > .prof-img {
+    flex: 0 0 50px;
+    padding: 10px;
+    line-height: 50px;
+    margin: auto 0;
+}
+
+.form-post {
+    border: none;
+    flex: 0 0 60%;
+    padding-left: 10px;
+    resize: vertical;
+    font-size: 18px;
+    height: 100px;
+}
+
+.post-btn {
+    padding: 0;
+    background: transparent;
+    flex: 0 0 50px;
+    margin-top: auto;
+}
+
+button {
+    padding: 0;
+    border:none;
+    cursor: pointer;
+}
+
+/* 投稿一覧 */
+.post-item {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 45px;
+}
+
+.post-item:first-child {
+    padding-top: 0;
+}
+
+.post-container {
+    margin: 0 auto;
+}
+
+.post-prof-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 150px;
+}
+
+.post-name,
+.post-date {
+    font-size: 14px;
+    color: #6C6C6C;
+}
+
+.post-name + p {
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.4;
+    letter-spacing: 1.3px;
+}
+
+.post-date {
+    display: block;
+}
+
+.date-btns {
+    flex: 0 0 150px;
+    margin-left: 40px;
+}
+
+.btns {
+    margin-top: 50%;
+}
+
+
+.modal-btn,
+.delete-btn{
+    height: 100%;
+    display: inline-block;
+    margin-left: 15px;
+}
+
+
+/* modal */
+
+.modal-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 780px;
+    background-color: #fff;
+    padding: 35px 50px;
+}
+
+#js-modal-close {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.5);
+}
+
+/* .modal-form {
+} */
+
+.modal-form > textarea {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+.modal-form + button {
+    display: block;
+    margin: 30px 0 0 auto;
+}
+
+/********************
+    検索
+*********************/
+.search .form-group {
+    align-items: center;
+    padding: 15px 60px;
+}
+
+.search-icon img {
+    width: 41px;
+}
+
+.search-icon {
+    background: transparent;
+}
+
+.search-box {
+    border: 1px solid #707070 !important;
+    border-radius: 5px;
+    width: 390px;
+    height: 45px;
+    margin-right: 15px;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
+.keyword {
+    margin-left: auto;
+}
+
+.users-list {
+    padding: 30px 95px;
+}
+
+.users-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.users-item > form {
+    margin-right: 140px;
+}
+
+.img-name {
+    display: flex;
+    align-items: center;
+}
+
+.un_follow {
+    background: #B95656;
+    border: none;
+}
+
+.un_follow:hover {
+    background: #723333;
+    cursor: pointer;
+}
+
+
+/********************
+    プロフィール
+*********************/
+.profile-container {
+    display: flex;
+    width: 100%;
+    padding: 0 100px;
+    margin: 40px auto;
+}
+
+.img-box {
+    margin-right: 30px;
+}
+
+.profile-container > form > table > tbody > tr > td {
+    vertical-align: top;
+    padding-right: 50px;
+    padding-bottom: 37px;
+}
+.profile-container > form > table > tbody > tr > td:nth-child(2) {
+    padding-right: 0;
+}
+
+.profile-container > form {
+    width: calc(100% - 200px);
+}
+
+td > input,
+td >textarea,
+input[type="file"]{
+    border: none;
+    background: #F2F2F2;
+    width: 280px;
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid #000;
+}
+
+td > textarea {
+   height: 70px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+.filename {
+    font-size: 12px;
+}
+
+label {
+    position: relative;
+    display: block;
+    height: 110px;
+    text-align: center;
+    width: 320px;
+    margin: auto;
+    border-bottom: 1px solid #000;
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+#js-label::after {
+   content: "ファイルを選択";
+   display: inline-block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   font-size: 18px;
+   padding: 10px;
+   border-radius: 5px;
+   width: 150px;
+   background: #fff;
+}
+#js-label.changed::after {
+   content: "ファイル選択済み";
+   background: #ccc;
+}
+
+label > span {
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.update-btn {
+    background-color: #7B9979;
+    width: 130px;
+    height: 45px;
+    padding: 0;
+    margin: 0 auto;
+
+}
+
+/********************
+フォローリスト
+*********************/
+.follow-follower-container {
+    padding: 20px 40px;
+}
+.follow-follower-container > h2 {
+    margin-bottom: 20px;
+}
+
+.follow-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    max-width: 850px;
+    margin: 0 auto;
+}
+.follow-item {
+    width: 85px;
+    margin-bottom: 15px;
+    transition: transform .3s;
+}
+
+.follow-item:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/********************
+フォローワー・フォロープロフ
+*********************/
+.follow-prof {
+    display: flex;
+    padding: 50px 20px 20px;
+    min-height: 120px;
+}
+
+.follow-prof > .img-box {
+    margin-right: 30px;
+    margin-left: 60px;
+}
+
+.follow-prof > table > tbody > tr:first-child > td{
+    padding-bottom: 30px;
+}
+.follow-prof > table > tbody > tr > td:first-child{
+    padding-right: 70px;
+}
+
+.prof-follow {
+    margin-left: auto;
+}
+
+.prof-follow > input {
+    margin-top: 60px;
+}
+
+.bio {
+    font-size: 14px;
+    max-width: 240px;
+}
