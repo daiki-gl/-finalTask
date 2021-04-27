@@ -323,6 +323,29 @@ button {
     margin-left: 15px;
 }
 
+.delete-btn {
+    transition: transform .5s;
+    position: relative;
+}
+
+.delete-btn:hover {
+    transform: rotateY(180deg);
+}
+
+
+.delete-btn::after {
+    display: block;
+    position: absolute;
+    content: url(./../images/trash_h.png);
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.delete-btn:hover::after {
+    opacity: 1;
+}
+
 
 /* modal */
 
